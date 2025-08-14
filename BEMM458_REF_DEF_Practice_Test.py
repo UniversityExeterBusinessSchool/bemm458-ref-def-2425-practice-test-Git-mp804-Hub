@@ -50,12 +50,13 @@ location_list = [] #Intializing the List
 for key in [1, 0]: #Loop Through Specific Keys
     word = feedback_keywords[key] #Get the comments for each key
     first_letter = customer_review.find(word) # Find the first letter
+    print(first_letter) # Double Checking
     if first_letter != -1: # double checking and starting if function
-        last_letter = first_letter - len(word) #finding the ending position
-        location_list.append((word, first_letter, last_letter)) # adding to the list that was initialized at the start
+        last_letter = first_letter + len(word) #finding the ending position
+        location_list.append((word, first_letter + 1, last_letter)) # adding to the list that was initialized at the start and adding one
 print(location_list) # final check
 
-# OUTPUT: [('impressive', 90, 80), ('honest', 52, 46)]
+# OUTPUT: [('impressive', 91, 100), ('honest', 53, 58)]
 
 ########################################################################################################################################################
 # Question 2 - Metrics Function for Business Intelligence
